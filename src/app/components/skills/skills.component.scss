@@ -1,0 +1,71 @@
+.skill-square {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px; /* esquinas suaves */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  padding: 6px; /* espacio para mostrar el borde */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+.skill-square:hover {
+  box-shadow: 0 0 10px rgba(70, 85, 101, 0.5);
+}
+
+.inner-square {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: #fff; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  color: #465565; 
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.inner-square h6 {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #465565; 
+}
+
+h2{
+
+  color: #465565; 
+}
+.inner-square small {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+
+  @media (max-width: 576px) {
+    .skill-square {
+      width: 110px;
+      height: 110px;
+    }
+    .skill-icon {
+      font-size: 1.5rem;
+    }
+    .inner-square h6 {
+      font-size: 0.8rem;
+    }
+    .inner-square small {
+      font-size: 0.7rem;
+    }
+  }
+
