@@ -12,7 +12,7 @@ import { ContactComponent } from "./components/contact/contact.component";
   selector: 'app-root',
   imports: [ProjectsComponent, FooterComponent, SkillsComponent, AboutComponent, HomeComponent, HeaderComponent, ContactComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'portfolio';

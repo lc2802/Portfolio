@@ -1,0 +1,54 @@
+.contact-card {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  border: none;
+}
+.card-header-custom {
+  padding: 2rem 1rem 1rem;
+}
+
+.card-header-custom h2 {
+  color: var(--color-primary);
+}
+
+/* Estilo de los Inputs */
+.form-control {
+  border: 2px solid #eee;
+  padding: 0.8rem;
+  transition: border-color var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: none;
+  outline: 0;
+}
+
+/* El Botón de Enviar */
+.btn-submit {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  font-weight: 600;
+  padding: 0.8rem;
+  transition: opacity var(--transition-fast), transform 0.1s;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Iconos de Redes Sociales */
+.social-link {
+  color: var(--color-primary);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--color-dark);
+  transform: scale(1.2);
+}

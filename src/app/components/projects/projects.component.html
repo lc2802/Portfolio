@@ -1,107 +1,103 @@
-<div class="container text-center">
-  <h2 class="fw-bold mb-5">Mis Proyectos</h2>
+<div class="projects-container container py-5">
+  <!-- GIS -->
 
-  <div class="row g-4">
-    <!-- Proyecto 1 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img
-          src="assets/proyecto1.jpg"
-          class="card-img-top"
-          alt="Proyecto 1"
-        />
-        <div class="card-body">
-          <h5 class="card-title fw-bold">E-commerce Angular</h5>
-          <p class="card-text">
-            Plataforma de compras online desarrollada con Angular, Spring Boot y
-            MySQL.
-          </p>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a
-            href="https://github.com/tuusuario/proyecto1"
-            target="_blank"
-            class="btn btn-outline-dark btn-sm me-2"
-          >
-            <i class="bi bi-github"></i> GitHub
-          </a>
-          <a
-            href="https://demo-proyecto1.com"
-            target="_blank"
-            class="btn btn-primary btn-sm"
-          >
-            <i class="bi bi-box-arrow-up-right"></i> Demo
-          </a>
+  <div id="carouselGIS" class="carousel carousel-fade py-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        *ngFor="let proyecto of gis; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <div class="row h-100 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="screen-frame">
+              <img [src]="proyecto.imagen" alt="img" />
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="glass-card p-4">
+              <h4>{{ proyecto.titulo }}</h4>
+              <p>{{ proyecto.descripcion }}</p>
+
+              <div>
+                <span class="tech-tag" *ngFor="let tag of proyecto.tags">
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Proyecto 2 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img
-          src="assets/proyecto2.jpg"
-          class="card-img-top"
-          alt="Proyecto 2"
-        />
-        <div class="card-body">
-          <h5 class="card-title fw-bold">GeoVisor GIS</h5>
-          <p class="card-text">
-            Aplicación web GIS con OpenLayers y PostGIS para visualizar y
-            analizar datos geoespaciales.
-          </p>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a
-            href="https://github.com/tuusuario/proyecto2"
-            target="_blank"
-            class="btn btn-outline-dark btn-sm me-2"
-          >
-            <i class="bi bi-github"></i> GitHub
-          </a>
-          <a
-            href="https://demo-proyecto2.com"
-            target="_blank"
-            class="btn btn-primary btn-sm"
-          >
-            <i class="bi bi-box-arrow-up-right"></i> Demo
-          </a>
+    <button
+      class="carousel-control-prev custom-arrow"
+      type="button"
+      data-bs-target="#carouselGIS"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button
+      class="carousel-control-next custom-arrow"
+      type="button"
+      data-bs-target="#carouselGIS"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- Arquitectura -->
+
+  <div id="carouselArch" class="carousel carousel-fade py-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div
+        *ngFor="let proyecto of arquitectura; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <div class="row h-100 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="screen-frame">
+              <img [src]="proyecto.imagen" alt="img" />
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="glass-card p-4">
+              <h4>{{ proyecto.titulo }}</h4>
+              <p>{{ proyecto.descripcion }}</p>
+
+              <div>
+                <span class="tech-tag" *ngFor="let tag of proyecto.tags">
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Proyecto 3 -->
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img
-          src="assets/proyecto3.jpg"
-          class="card-img-top"
-          alt="Proyecto 3"
-        />
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Gestor de Reportes</h5>
-          <p class="card-text">
-            Sistema de reportes interactivo con Angular + Spring Boot, diseñado
-            para gestión de datos.
-          </p>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a
-            href="https://github.com/tuusuario/proyecto3"
-            target="_blank"
-            class="btn btn-outline-dark btn-sm me-2"
-          >
-            <i class="bi bi-github"></i> GitHub
-          </a>
-          <a
-            href="https://demo-proyecto3.com"
-            target="_blank"
-            class="btn btn-primary btn-sm"
-          >
-            <i class="bi bi-box-arrow-up-right"></i> Demo
-          </a>
-        </div>
-      </div>
-    </div>
+    <button
+      class="carousel-control-prev custom-arrow"
+      type="button"
+      data-bs-target="#carouselArch"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button
+      class="carousel-control-next custom-arrow"
+      type="button"
+      data-bs-target="#carouselArch"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
   </div>
 </div>

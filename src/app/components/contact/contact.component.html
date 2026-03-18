@@ -1,1 +1,44 @@
-<p>contact works!</p>
+<div class="container p-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="contact-card">
+        <div class="card-header-custom text-center">
+          <h2 class="fw-bold mb-2">¡Hablemos!</h2>
+          <p>¿Tienes un proyecto en mente o solo quieres saludar? Escríbeme.</p>
+        </div>
+        
+        <form class="p-4 mt-2">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Nombre</label>
+            <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label fw-semibold">Mensaje</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="¿En qué puedo ayudarte?"></textarea>
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-submit btn-lg">
+              Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="text-muted">También puedes encontrarme en:</p>
+        <div class="fs-2 d-flex justify-content-center gap-4">
+          <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-envelope-at"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
