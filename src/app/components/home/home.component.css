@@ -11,13 +11,11 @@
 
 #home h1 {
   font-size: 3.5rem;
-  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
 #home p.lead {
   font-size: 1.5rem;
-  color: var(--color-dark);
   font-weight: 500;
 }
 
@@ -26,19 +24,34 @@
   display: inline-block;
   animation: wave-animation 2.5s infinite;
   transform-origin: 70% 70%; /* Eje de rotación para que parezca un saludo */
-  color: var(--color-primary);
   margin-left: 10px;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Responsivo para celulares */
@@ -49,4 +62,15 @@
   #home p.lead {
     font-size: 1.2rem;
   }
+}
+
+#home-content  {
+  color: var(--color-white);
+}
+.btn {
+  background-color:var(--color-white);
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
 }

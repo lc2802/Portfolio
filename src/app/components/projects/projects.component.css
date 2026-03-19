@@ -1,139 +1,109 @@
-.projects-container {
+/* src/app/components/projects/projects.component.css */
 
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* 🔥 centra vertical */
-  align-items: center;     /* 🔥 centra horizontal */
-}
-
-
-/* necesario para fade */
-.carousel-item {
+.project-card-premium {
   position: relative;
+  padding: 40px 0;
 }
 
-.carousel-item .row {
-  height: 100%;
-  margin: 0;
-  width: 100%;              /* 🔥 clave */
-  align-items: center;
-  justify-content: space-between; /* 🔥 separa imagen y card */
-}
-
-/* columnas */
-.col-lg-5,
-.col-lg-7 {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-/* CONTENEDOR IMAGEN */
-.screen-frame {
-  width: 40rem;
-  height: 280px;
-  border: 8px solid #0f172a;
-  border-radius: 18px;
+/* Mockup estilo Navegador */
+.mockup-browser {
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  background: #000;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* IMAGEN */
-.screen-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.carousel-item.active .screen-frame img {
-  transform: scale(1.03);
-}
-
-/* CARD */
-.glass-card {
-  width: 100%;
-  height: 280px;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  background: linear-gradient(145deg, #1e293b, #0f172a);
-  border-radius: 20px;
-  color: white;
-
+.browser-header {
+  background: #f1f1f1;
+  padding: 10px 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* TITULO */
-.glass-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  word-break: break-word;
-}
-
-/* TEXTO */
-.glass-card p {
-  font-size: 0.9rem;
-
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-/* CONTENEDOR TAGS */
-.glass-card div {
-  display: flex;
-  flex-wrap: wrap;
   gap: 6px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* TAG */
-.tech-tag {
-  font-size: 0.75rem;
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.mockup-browser img {
+  width: 100%;
+  height: 25rem;
+  /* object-fit: contain; */
+}
+
+/* Tarjeta Flotante Pinterest Style */
+.info-glass-card {
+  background: #1e293b; /* Tu gris oscuro */
+  padding: 3rem;
+  border-radius: 24px;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+/* Efecto de solapamiento en PC */
+@media (min-width: 992px) {
+  .project-text-wrapper {
+    margin-left: -80px; /* Pisa la imagen hacia la izquierda */
+  }
+  .invert .project-text-wrapper {
+    margin-left: 0;
+    margin-right: -80px; /* Pisa la imagen hacia la derecha */
+  }
+  
+  .project-card-premium:hover .mockup-browser {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+/* Detalles estéticos */
+.accent-line {
+  width: 40px;
+  height: 4px;
+  background: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.category {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #94a3b8;
-  border: 1px solid #334155;
-  padding: 3px 10px;
-  border-radius: 15px;
+  margin-bottom: 0.5rem;
 }
 
-/* FLECHAS */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 6%;
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
-/* .carousel-control-prev {
-  left: -30px;
+.description {
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-.carousel-control-next {
-  right: -30px;
-} */
+.tags span {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 8px;
+}
 
-/* RESPONSIVE */
+/* Ajuste móvil */
 @media (max-width: 991px) {
-  .carousel,
-  .carousel-inner,
-  .carousel-item {
-    height: auto;
+  .project-text-wrapper {
+    margin-top: -40px;
+    padding: 0 15px;
   }
-
-  .screen-frame {
-    height: 220px;
-  }
-
-  .glass-card {
-    height: auto;
-    margin-top: 15px;
+  .info-glass-card {
+    padding: 2rem;
   }
 }

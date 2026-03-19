@@ -1,103 +1,99 @@
-<div class="projects-container container py-5">
-  <!-- GIS -->
-
-  <div id="carouselGIS" class="carousel carousel-fade py-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div
-        *ngFor="let proyecto of gis; let i = index"
-        class="carousel-item"
-        [class.active]="i === 0"
-      >
-        <div class="row h-100 align-items-stretch">
-          <div class="col-lg-7">
-            <div class="screen-frame">
-              <img [src]="proyecto.imagen" alt="img" />
-            </div>
+<div class="pinterest-projects container py-5">
+  <div class="project-card-premium mb-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-8 project-image-wrapper">
+        <div class="mockup-browser shadow-2xl">
+          <div class="browser-header">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
           </div>
+          <img src="assets/geoportal.png" class="img-fluid" alt="GIS Project" />
+        </div>
+      </div>
 
-          <div class="col-lg-5">
-            <div class="glass-card p-4">
-              <h4>{{ proyecto.titulo }}</h4>
-              <p>{{ proyecto.descripcion }}</p>
-
-              <div>
-                <span class="tech-tag" *ngFor="let tag of proyecto.tags">
-                  {{ tag }}
-                </span>
-              </div>
-            </div>
+      <div class="col-lg-4 project-text-wrapper">
+        <div class="info-glass-card">
+          <div class="accent-line"></div>
+          <h5 class="category">Geoespacial</h5>
+          <h2 class="title">Geoportal <br />Corporativo</h2>
+          <p class="description">
+            Análisis funcional y arquitectura de capas dinámicas sobre
+            <strong>OpenLayers</strong>. Un sistema diseñado para la gestión
+            territorial de alta complejidad.
+          </p>
+          <div class="tags">
+            <span>Angular</span>
+            <span>PostGIS</span>
+            <span>RxJS</span>
           </div>
         </div>
       </div>
     </div>
-
-    <button
-      class="carousel-control-prev custom-arrow"
-      type="button"
-      data-bs-target="#carouselGIS"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button
-      class="carousel-control-next custom-arrow"
-      type="button"
-      data-bs-target="#carouselGIS"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon"></span>
-    </button>
   </div>
 
-  <!-- Arquitectura -->
-
-  <div id="carouselArch" class="carousel carousel-fade py-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div
-        *ngFor="let proyecto of arquitectura; let i = index"
-        class="carousel-item"
-        [class.active]="i === 0"
-      >
-        <div class="row h-100 align-items-stretch">
-          <div class="col-lg-7">
-            <div class="screen-frame">
-              <img [src]="proyecto.imagen" alt="img" />
-            </div>
+  <div class="project-card-premium invert mb-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-8 order-lg-2 project-image-wrapper">
+        <div class="mockup-browser shadow-2xl">
+          <div class="browser-header">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
           </div>
-
-          <div class="col-lg-5">
-            <div class="glass-card p-4">
-              <h4>{{ proyecto.titulo }}</h4>
-              <p>{{ proyecto.descripcion }}</p>
-
-              <div>
-                <span class="tech-tag" *ngFor="let tag of proyecto.tags">
-                  {{ tag }}
-                </span>
-              </div>
-            </div>
+          <img
+            src="assets/geoportal2.png"
+            class="img-fluid"
+            alt="Arch Project"
+          />
+        </div>
+      </div>
+      <div class="col-lg-4 order-lg-1 project-text-wrapper">
+        <div class="info-glass-card">
+          <div class="accent-line"></div>
+          <h5 class="category">Arquitectura</h5>
+          <h2 class="title">Templates & <br />Estandarización</h2>
+          <p class="description">
+            Estandarización de microservicios en <strong>Spring Boot</strong>.
+            Creación de arquetipos base para asegurar la escalabilidad del
+            departamento.
+          </p>
+          <div class="tags">
+            <span>Java</span>
+            <span>OAuth2</span>
+            <span>Maven</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="project-card-premium mb-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-8 project-image-wrapper">
+        <div class="mockup-browser shadow-2xl">
+          <div class="browser-header">
+            <span class="dot red"></span><span class="dot yellow"></span
+            ><span class="dot green"></span>
+          </div>
+          <img src="assets/geoportal.png" class="img-fluid" alt="GIS Project" />
+        </div>
+      </div>
 
-    <button
-      class="carousel-control-prev custom-arrow"
-      type="button"
-      data-bs-target="#carouselArch"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button
-      class="carousel-control-next custom-arrow"
-      type="button"
-      data-bs-target="#carouselArch"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon"></span>
-    </button>
+      <div class="col-lg-4 project-text-wrapper">
+        <div class="info-glass-card">
+          <div class="accent-line"></div>
+          <h5 class="category">Geoespacial</h5>
+          <h2 class="title">Geoportal <br />Corporativo</h2>
+          <p class="description">
+            Análisis funcional y arquitectura de capas dinámicas sobre
+            <strong>OpenLayers</strong>. Un sistema diseñado para la gestión
+            territorial de alta complejidad.
+          </p>
+          <div class="tags">
+            <span>Angular</span>
+            <span>PostGIS</span>
+            <span>RxJS</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

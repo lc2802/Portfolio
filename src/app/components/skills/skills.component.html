@@ -3,11 +3,11 @@
   <div class="row g-4 justify-content-center">
     <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center"
          *ngFor="let skill of skills">
-      <div class="skill-square" [style.background]="getBorderProgress(skill.level)">
+      <div class="skill-square" >
         <div class="inner-square">
           <i [class]="skill.icon + ' skill-icon mb-2'"></i>
           <h6 class="fw-bold">{{ skill.name }}</h6>
-          <small>{{ skill.level }}%</small>
+          <!-- <small>{{ skill.level }}%</small> -->
         </div>
       </div>
     </div>
