@@ -1,5 +1,40 @@
+/* Navbar General */
+.custom-navbar {
+  height: 5.5rem;
+  background: rgba(30, 41, 59, 0.8) !important; /* Gris oscuro translúcido */
+  backdrop-filter: blur(12px); /* El toque pro: desenfoque */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+/* Marca / Logo */
+.navbar-brand {
+  font-size: 1.6rem;
+  color: #fff !important;
+  letter-spacing: -1px;
+}
+
+.brand-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Links de navegación */
 .navbar-nav .nav-link {
-  position: relative;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
 }
 
 .navbar-nav .nav-link::after {
@@ -7,21 +42,92 @@
   position: absolute;
   width: 0%;
   height: 2px;
-  bottom: 0;
-  left: 0;
+  bottom: 5px;
+  left: 1.2rem;
   background-color: #0d6efd;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover::after {
+  width: calc(100% - 2.4rem);
+}
+
+/* Botón de Contacto resaltado */
+.contact-btn {
+  background: #0d6efd;
+  border-radius: 50px;
+  padding: 2px 5px;
+  transition: transform 0.3s ease;
+}
+
+.contact-btn .nav-link {
+  color: #fff !important;
+}
+
+.contact-btn .nav-link::after { display: none; } 
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  background: #0b5ed7;
+}
+@media (max-width: 991px) {
+  /* 1. Forzamos que el header sea sólido cuando el menú está abierto */
+  .custom-navbar {
+    background: #1e293b !important;
+    height: auto !important;
+  }
+
+  /* 2. El contenedor que expande */
+  .navbar-collapse {
+    /* Agregamos un margen interno para que los links no respiren mejor */
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+  }
+
+  /* 3. Estilo de los links en el desplegable */
+  .navbar-nav {
+    padding-top: 1rem;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: left; /* Alineado a la izquierda queda más sobrio */
+    padding: 5px 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    display: block;
+    width: 100%;
+  }
+
+  /* 4. El botón de contacto dentro del desplegable */
+  .contact-btn {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+    background: #0d6efd;
+    border-radius: 12px;
+    text-align: center; /* El botón sí lo centramos */
+  }
+
+  .contact-btn .nav-link {
+    padding: 12px !important;
+    color: white !important;
+  }
+}
+
+.hamburger-icon {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.line {
+  display: block;
   width: 100%;
-}
-
-.navbar{
-  height: 5rem;
-  font-size: 1.5rem;
-}
-
-.navbar-brand{
-  font-size: 1.5rem;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
 }
