@@ -5,10 +5,11 @@ import { AboutComponent } from "./components/about/about.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
-  imports: [ProjectsComponent, SkillsComponent, AboutComponent, HomeComponent, HeaderComponent, ContactComponent],
+  imports: [ProjectsComponent, SkillsComponent, AboutComponent, HomeComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

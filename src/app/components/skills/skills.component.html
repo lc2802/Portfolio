@@ -1,15 +1,33 @@
-<div class="container text-center">
-  <h2 class="fw-bold mb-5">Stack</h2>
-  <div class="row g-4 justify-content-center">
-    <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center"
-         *ngFor="let skill of skills">
-      <div class="skill-square" >
-        <div class="inner-square">
-          <i [class]="skill.icon + ' skill-icon mb-2'"></i>
-          <h6 class="fw-bold">{{ skill.name }}</h6>
-          <!-- <small>{{ skill.level }}%</small> -->
+<div class="container text-center py-5" id="stack">
+  <h2 class="fw-bold text-secondary mb-5">Stack Tecnológico</h2>
+
+  <div class="carousel-wrapper position-relative" 
+       (mouseenter)="stopAutoScroll()" 
+       (mouseleave)="startAutoScroll()">
+    
+    <button class="btn-nav left" (click)="scroll('left')">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <div class="skills-carousel-container" #carousel (scroll)="onScroll()">
+      <div class="skills-track">
+        <div class="skill-item" *ngFor="let skill of skills">
+          <div class="skill-square">
+            <i [class]="skill.icon + ' skill-icon'"></i>
+            <h6 class="fw-bold">{{ skill.name }}</h6>
+          </div>
+        </div>
+        <div class="skill-item" *ngFor="let skill of skills">
+          <div class="skill-square">
+            <i [class]="skill.icon + ' skill-icon'"></i>
+            <h6 class="fw-bold">{{ skill.name }}</h6>
+          </div>
         </div>
       </div>
     </div>
+
+    <button class="btn-nav right" (click)="scroll('right')">
+      <i class="bi bi-chevron-right"></i>
+    </button>
   </div>
 </div>

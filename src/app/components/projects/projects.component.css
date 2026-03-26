@@ -1,159 +1,187 @@
-/* src/app/components/projects/projects.component.css */
-
-.project-card-premium {
-  position: relative;
-  padding: 40px 0;
+/* 1. CONFIGURACIÓN DEL COMPONENTE (Scoped) */
+:host {
+  --transition-project: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
 }
 
-/* Mockup estilo Navegador */
+/* 2. ESTRUCTURA DE CARDS */
+.project-card-premium {
+  position: relative;
+  padding: 60px 0;
+}
+
+/* Mockup Estilo Browser - Bordes Rectos para perfil Analista */
 .mockup-browser {
-  background: #fff;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 4px; /* Cambiado de 12px a 4px */
   overflow: hidden;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition-project);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .browser-header {
   background: #f1f1f1;
   padding: 10px 15px;
   display: flex;
-  gap: 6px;
+  align-items: center;
   border-bottom: 1px solid #ddd;
 }
 
-.dot { width: 8px; height: 8px; border-radius: 50%; }
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
+/* 3. VISUALIZADORES INTERNOS */
+.code-diagram-visualizer {
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
 
-.mockup-browser img {
+.main-img {
   width: 100%;
-  height: 25rem;
+  height: 28rem;
   object-fit: cover;
 }
 
-/* Tarjeta Flotante Pinterest Style */
+/* 4. JSON STYLE */
+.code-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.json-line {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.text-primary { color: #6366f1 !important; } 
+.text-info { color: #38bdf8 !important; } 
+.text-warning { color: #fbbf24 !important; } 
+.text-success { color: #34d399 !important; } 
+
+/* 5. TARJETAS DE INFORMACIÓN (Glassmorphism Recto) */
 .info-glass-card {
-  background: #1e293b; /* Tu gris oscuro */
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(12px);
   padding: 3rem;
-  border-radius: 24px;
+  border-radius: 4px; /* Cambiado de 24px a 4px */
   color: white;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   position: relative;
-  z-index: 10;
+  z-index: 30;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Efecto de solapamiento en PC */
+.accent-line {
+  width: 60px;
+  height: 2px; /* Más fina para elegancia */
+  background: #38bdf8;
+  margin-bottom: 1.5rem;
+}
+
+/* 6. BOTONES Y UTILITARIOS */
+.btn-expand {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  z-index: 40;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  transition: 0.3s;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+.tags span {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* 7. LÓGICA DE LAYOUT (Desktop) */
 @media (min-width: 992px) {
-  .project-text-wrapper {
-    margin-left: -80px; /* Pisa la imagen hacia la izquierda */
-  }
+  .project-text-wrapper { margin-left: -80px; }
   .invert .project-text-wrapper {
     margin-left: 0;
-    margin-right: -80px; /* Pisa la imagen hacia la derecha */
+    margin-right: -100px;
+    text-align: right;
   }
-  
+  .invert .accent-line { margin-left: auto; }
+  .invert .tags { justify-content: flex-end; }
   .project-card-premium:hover .mockup-browser {
     transform: translateY(-10px) scale(1.02);
   }
 }
 
-/* Detalles estéticos */
-.accent-line {
-  width: 40px;
-  height: 4px;
-  background: var(--color-primary);
-  margin-bottom: 20px;
-}
-
-.category {
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #94a3b8;
-  margin-bottom: 0.5rem;
-}
-
-.title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-}
-
-.description {
-  color: #cbd5e1;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.tags span {
-  font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-right: 8px;
-}
-
-/* Ajuste móvil */
+/* 8. LÓGICA RESPONSIVE CONSOLIDADA (Mobile & Tablet) */
 @media (max-width: 991px) {
+  .project-card-premium { padding: 30px 15px; }
+
+  /* Aseguramos que el Invert respete el orden visual */
+  .project-card-premium .row {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .project-image-wrapper {
+    order: 1 !important;
+    margin-bottom: 0;
+  }
+
   .project-text-wrapper {
-    margin-top: -40px;
-    padding: 0 15px;
-  }
-  .info-glass-card {
-    padding: 2rem;
-  }
-}
-/* src/app/components/projects/projects.component.css */
-
-/* --- TUS ESTILOS ACTUALES --- */
-/* Asegurate de tener los estilos de escritorio que definimos antes */
-
-
-/* --- RESPONSIVE MEDIA QUERY (PANTALLAS CHICAS < 720px) --- */
-@media (max-width: 720px) {
-  
-  /* 1. Forzamos que las columnas ocupen el 100% */
-  .col-lg-8, .col-lg-4 {
-    width: 100% !important;
-    display: block !important;
+    order: 2 !important;
+    margin-top: -40px; /* Solapamiento sobre la imagen */
+    padding: 0 10px;
   }
 
-  /* 2. El mockup del navegador */
   .mockup-browser {
-    border-radius: 12px 12px 0 0 !important; /* Redondeado solo arriba */
+    border-radius: 4px 4px 0 0 !important;
     border-bottom: none;
   }
-  
-  .mockup-browser img {
-    height: 250px !important; /* Imagen más chica en celus */
-    object-fit: cover;
-  }
 
-  /* 3. La tarjeta de información (info-glass-card) */
   .info-glass-card {
-    margin-top: 0 !important; /* Eliminamos el solapamiento negativo */
-    border-radius: 0 0 12px 12px !important; /* Redondeado solo abajo para unirlo al mockup */
-    padding: 2rem !important;
-    box-shadow: none; /* Quitamos sombra pesada en móvil */
+    margin-top: -40px !important;
+    border-radius: 4px !important;
+    padding: 2rem 1.5rem !important;
+    text-align: left !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
   }
 
-  /* 4. Quitamos el margen lateral que usábamos para pisar la imagen en PC */
-  .project-text-wrapper, 
-  .invert .project-text-wrapper {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 15px; /* Un poco de aire a los costados */
+  /* Reset de alineaciones para el invertido en mobile */
+  .invert .project-text-wrapper { text-align: left !important; margin: 0 !important; }
+  .invert .accent-line { margin-left: 0; }
+  .invert .tags { justify-content: flex-start; }
+
+  /* Ajustes de altura */
+  .code-diagram-visualizer, .main-img {
+    height: 280px !important; 
   }
 
   .title {
-    font-size: 1.6rem !important; /* Título más acorde al celu */
-  }
-
-  .project-card-premium {
-    padding: 20px 0 !important;
+    font-size: 1.6rem !important;
+    line-height: 1.2;
   }
 }
+
+/* 9. AJUSTES EXTRA PARA CELULARES CHICOS */
+@media (max-width: 576px) {
+  .json-line {
+    font-size: 0.7rem !important;
+    line-height: 1.2;
+  }
+  .code-diagram-visualizer {
+    height: 300px !important;
+  }
+}
+
+.opacity-10 { opacity: 0.1; }

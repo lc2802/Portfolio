@@ -1,76 +1,87 @@
 #home {
-  background: linear-gradient(135deg, var(--color-bg-light) 0%, #e9ecef 100%);
+  background: transparent;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%; /* Ocupa el 100% del body */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;    /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+#home-content {
+  color: var(--color-white);
+  width: 100%;
+  max-width: 900px; /* Evita que el texto se estire infinito en monitores 4K */
+  margin: 0 auto;   /* Margen automático para centrar el bloque */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea hijos (h1, p, div) al centro */
+}
+
+/* Forzamos que los párrafos se centren y no hereden alineación a la izquierda */
+#home-content p {
+  width: 100%;
+  text-align: center;
 }
 
 #home h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Se ajusta solo según el tamaño de pantalla */
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
 }
 
 #home p.lead {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
 }
 
-/* 💫 Animación del Icono */
+/* 💫 Animación del Icono (Mejorada para que no sea brusca) */
 .wave {
   display: inline-block;
   animation: wave-animation 2.5s infinite;
-  transform-origin: 70% 70%; /* Eje de rotación para que parezca un saludo */
+  transform-origin: 70% 70%;
   margin-left: 10px;
+  color: #38bdf8; /* Color celeste tech */
 }
 
 @keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Botones con estilo moderno */
+.btn-home {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  padding: 0.8rem 2.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {
-  #home h1 {
-    font-size: 2.5rem;
+  #home {
+    padding: 1rem;
   }
-  #home p.lead {
-    font-size: 1.2rem;
+  
+  /* Evitamos que el texto choque con los bordes */
+  #home-content {
+    padding: 0 15px;
   }
-}
-
-#home-content  {
-  color: var(--color-white);
-}
-.btn {
-  background-color:var(--color-white);
-}
-
-.btn:hover {
-  background-color: var(--color-primary);
 }

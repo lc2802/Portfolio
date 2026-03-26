@@ -1,0 +1,50 @@
+.footer-contact-section {
+  padding: 80px 0 60px;
+}
+
+/* Tarjeta con bordes más rectos (Soberbio) */
+.contact-card-modern {
+  background: #ffffff;
+  border-radius: 8px; /* Casi recto, estilo corporativo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+/* Inputs consistentes con los bordes de la tarjeta */
+.custom-form-dark .form-control {
+  background-color: #fcfcfc !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+  border-radius: 4px; /* Estilo industrial/técnico */
+  box-shadow: none !important;
+}
+
+.custom-form-dark label {
+  color: #6b7280 !important;
+}
+
+.btn-submit-primary {
+  background: #1e293b; /* Slate 800 */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.btn-submit-primary:hover {
+  background: #3b82f6; /* El azul de Bootstrap que ya usás */
+  transform: translateY(-2px);
+}
+
+.social-item-dark {
+  font-size: 1.8rem;
+  color: #64748b;
+  transition: 0.3s;
+}
+
+.social-item-dark:hover {
+  color: #1e293b;
+  transform: scale(1.1);
+}

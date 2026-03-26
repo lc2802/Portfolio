@@ -105,3 +105,41 @@ main {
 #contact {
   background: rgba(255,255,255,0.06);
 }
+
+/* Limpia el espacio fantasma a los costados */
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Asegura que el contenedor principal no deje espacios */
+.container, .container-fluid {
+  padding-right: 15px !important;
+  padding-left: 15px !important;
+}
+
+/* Por si el carrusel está forzando ancho */
+.skills-carousel-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+/* --- KILL HORIZONTAL SCROLL (CORREGIDO) --- */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Evitamos el !important global en section para permitir que el carrusel funcione */
+section, main, footer, header {
+  width: 100% !important;
+  max-width: 100% !important;
+  /* Quitamos el overflow-x de acá para que los hijos decidan */
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
