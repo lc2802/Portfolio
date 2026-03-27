@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-projects',
@@ -8,56 +9,24 @@ import { CommonModule } from '@angular/common';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
-export class ProjectsComponent implements OnInit {
-// En tu componente
-ngOnInit(): void {
-  const container = document.getElementById('viewerContainer');
-  const img = document.getElementById('viewableImage') as HTMLImageElement;
+export class ProjectsComponent {
+verDetalle() {
+    const modalWidth = window.innerWidth < 768 ? '100%' : '40%';
 
-  if (!container || !img) return;
-
-  let scale = 1;
-  let isDragging = false;
-  let startX = 0, startY = 0;
-  let translateX = 0, translateY = 0;
-
-  // --- ZOOM CON RUEDA ---
-  container.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? -0.2 : 0.2;
-    scale = Math.min(Math.max(1, scale + delta), 5); // Entre 1x y 5x
-    updateTransform();
-  });
-
-  // --- ARRASTRE (PAN) ---
-  container.addEventListener('mousedown', (e) => {
-    if (scale === 1) return; // No arrastrar si no hay zoom
-    isDragging = true;
-    startX = e.clientX - translateX;
-    startY = e.clientY - translateY;
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    translateX = e.clientX - startX;
-    translateY = e.clientY - startY;
-    updateTransform();
-  });
-
-  window.addEventListener('mouseup', () => {
-    isDragging = false;
-  });
-
-  function updateTransform() {
-    img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    Swal.fire({
+      title: 'Protocolo OAuth2 - Geoportal',
+      imageUrl: 'assets/oauth2.svg',
+      imageAlt: 'Diagrama de flujo OAuth2',
+      width: modalWidth, 
+      background: '#ffffff',
+      color: '#020617',
+      showCloseButton: true,
+      showConfirmButton: false,
+      focusConfirm: false,
+      customClass: {
+        popup: 'custom-project-modal',
+        image: 'img-fluid rounded'
+      },
+    });
   }
-
-  // Resetear al cerrar el modal
-  const modalEl = document.getElementById('diagramModal');
-  modalEl?.addEventListener('hidden.bs.modal', () => {
-    scale = 1;
-    translateX = 0;
-    translateY = 0;
-    updateTransform();
-  });
-}}
+}

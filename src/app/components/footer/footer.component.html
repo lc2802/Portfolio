@@ -1,74 +1,60 @@
-<footer id="contact" class="footer-contact-section bg-light">
+<footer id="contact" class="footer-contact-section bg-light py-5">
   <div class="container">
     <div class="row g-5 align-items-center">
       <div class="col-lg-5 text-center text-lg-start">
-        <h2 class="fw-bold text-dark display-4 mb-4">¿Conectamos?</h2>
-        <p class="text-secondary fs-5 mb-5">
-          Analista Funcional enfocado en <strong>optimización de procesos</strong> y
-          modernización de stacks técnicos. Listo para aportar una mirada
-          integral en proyectos de desarrollo y migraciones.
+        <h2 class="fw-bold text-dark display-5 mb-4">¿Conectamos?</h2>
+        <p class="text-secondary fs-6 mb-5 text-justify-mobile" style="line-height: 1.6; text-align: justify;">
+          Analista Funcional enfocado en
+          <strong>optimización de procesos</strong> y modernización de stacks
+          técnicos. Listo para aportar una mirada integral en proyectos de
+          desarrollo y migraciones.
         </p>
 
-        <div
-          class="social-group d-flex gap-4 justify-content-center justify-content-lg-start"
-        >
-          <a href="#" class="social-item-dark" title="LinkedIn"
-            ><i class="bi bi-linkedin"></i
-          ></a>
-          <a href="#" class="social-item-dark" title="GitHub"
-            ><i class="bi bi-github"></i
-          ></a>
-          <a
-            href="assets/tu-cv.pdf"
-            download
-            class="social-item-dark"
-            title="Ver CV Completo"
-          >
-            <i class="bi bi-file-earmark-pdf-fill"></i>
-          </a>
+        <div class="contact-info-list">
+          <div class="d-grid d-sm-flex gap-2 justify-content-center justify-content-lg-start mt-4">
+            <a href="https://www.linkedin.com/in/lucas-cord%C3%B3/" target="_blank" 
+               class="btn btn-sm btn-outline-secondary px-3 py-2 rounded-1 fw-semibold">
+              <i class="bi bi-linkedin me-2"></i> LinkedIn
+            </a>
+            <a href="https://github.com/lc2802/Portfolio" target="_blank" 
+               class="btn btn-sm btn-outline-secondary px-3 py-2 rounded-1 fw-semibold">
+              <i class="bi bi-github me-2"></i> Ver Código
+            </a>
+            <a href="assets/CV_CORDO_LUCAS.pdf" download 
+               class="btn btn-sm btn-dark px-3 py-2 rounded-1 fw-semibold shadow-none">
+              <i class="bi bi-file-earmark-pdf-fill me-2"></i> Descargar CV
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="col-lg-7">
-        <div class="contact-card-modern p-4 p-md-5">
-          <h3 class="text-dark fw-bold mb-4">Enviame un mensaje</h3>
-          <form>
+        <div class="contact-card-modern p-4 p-md-5 rounded-1 border border-dark border-opacity-10" 
+             style="background-color: rgba(255, 255, 255, 0.6); backdrop-filter: blur(5px);">
+          <h3 class="text-dark fw-bold mb-4 fs-4">Enviame un mensaje</h3>
+          <form action="https://formspree.io/f/mnjonvqy" method="POST">
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating custom-form-dark">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    placeholder="Nombre"
-                  />
+                  <input type="text" name="name" class="form-control bg-transparent border-dark border-opacity-25 rounded-0" id="name" placeholder="Nombre" required />
                   <label for="name">Nombre</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating custom-form-dark">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Email"
-                  />
+                  <input type="email" name="email" class="form-control bg-transparent border-dark border-opacity-25 rounded-0" id="email" placeholder="Email" required />
                   <label for="email">Email</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating custom-form-dark">
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    placeholder="Mensaje"
-                    style="height: 120px"
-                  ></textarea>
+                  <textarea name="message" class="form-control bg-transparent border-dark border-opacity-25 rounded-0" id="message" placeholder="Mensaje" style="height: 120px" required></textarea>
                   <label for="message">¿En qué puedo ayudarte?</label>
                 </div>
               </div>
+              <input type="text" name="_gotcha" style="display: none" />
               <div class="col-12 text-end mt-4">
-                <button type="submit" class="btn-submit-primary w-100 py-3">
+                <button type="submit" class="btn btn-dark w-100 py-3 fw-bold rounded-1 text-uppercase" style="letter-spacing: 1px; font-size: 0.8rem;">
                   Enviar Mensaje <i class="bi bi-send-fill ms-2"></i>
                 </button>
               </div>
@@ -78,11 +64,9 @@
       </div>
     </div>
 
-    <div
-      class="footer-bottom text-center mt-5 pt-5 border-top border-dark border-opacity-10"
-    >
+    <div class="footer-bottom text-center mt-5 pt-4 border-top border-dark border-opacity-10">
       <p class="text-muted small m-0">
-        &copy; 2026 Lucas Cordó — Portfolio
+        &copy; 2026 Lucas Cordó — Santa Fe, Argentina
       </p>
     </div>
   </div>

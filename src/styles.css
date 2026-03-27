@@ -143,3 +143,14 @@ section, main, footer, header {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
+
+/* Justificado global para párrafos */
+p {
+  text-align: justify;
+  hyphens: auto; /* Ayuda a que las palabras largas se corten con guiones si es necesario */
+}
+
+/* Opcional: Si querés que los títulos sigan centrados o a la izquierda */
+h1, h2, h3, h4, h5, h6 {
+  text-align: inherit; 
+}

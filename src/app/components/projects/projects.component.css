@@ -52,15 +52,23 @@
 }
 
 .json-line {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.text-primary { color: #6366f1 !important; } 
-.text-info { color: #38bdf8 !important; } 
-.text-warning { color: #fbbf24 !important; } 
-.text-success { color: #34d399 !important; } 
+.text-primary {
+  color: #6366f1 !important;
+}
+.text-info {
+  color: #38bdf8 !important;
+}
+.text-warning {
+  color: #fbbf24 !important;
+}
+.text-success {
+  color: #34d399 !important;
+}
 
 /* 5. TARJETAS DE INFORMACIÓN (Glassmorphism Recto) */
 .info-glass-card {
@@ -97,7 +105,12 @@
   transition: 0.3s;
 }
 
-.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
 .tags span {
   background: rgba(56, 189, 248, 0.1);
   color: #38bdf8;
@@ -110,14 +123,20 @@
 
 /* 7. LÓGICA DE LAYOUT (Desktop) */
 @media (min-width: 992px) {
-  .project-text-wrapper { margin-left: -80px; }
+  .project-text-wrapper {
+    margin-left: -80px;
+  }
   .invert .project-text-wrapper {
     margin-left: 0;
     margin-right: -100px;
     text-align: right;
   }
-  .invert .accent-line { margin-left: auto; }
-  .invert .tags { justify-content: flex-end; }
+  .invert .accent-line {
+    margin-left: auto;
+  }
+  .invert .tags {
+    justify-content: flex-end;
+  }
   .project-card-premium:hover .mockup-browser {
     transform: translateY(-10px) scale(1.02);
   }
@@ -125,7 +144,9 @@
 
 /* 8. LÓGICA RESPONSIVE CONSOLIDADA (Mobile & Tablet) */
 @media (max-width: 991px) {
-  .project-card-premium { padding: 30px 15px; }
+  .project-card-premium {
+    padding: 30px 15px;
+  }
 
   /* Aseguramos que el Invert respete el orden visual */
   .project-card-premium .row {
@@ -154,17 +175,25 @@
     border-radius: 4px !important;
     padding: 2rem 1.5rem !important;
     text-align: left !important;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   }
 
   /* Reset de alineaciones para el invertido en mobile */
-  .invert .project-text-wrapper { text-align: left !important; margin: 0 !important; }
-  .invert .accent-line { margin-left: 0; }
-  .invert .tags { justify-content: flex-start; }
+  .invert .project-text-wrapper {
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  .invert .accent-line {
+    margin-left: 0;
+  }
+  .invert .tags {
+    justify-content: flex-start;
+  }
 
   /* Ajustes de altura */
-  .code-diagram-visualizer, .main-img {
-    height: 280px !important; 
+  .code-diagram-visualizer,
+  .main-img {
+    height: 280px !important;
   }
 
   .title {
@@ -182,6 +211,39 @@
   .code-diagram-visualizer {
     height: 300px !important;
   }
+  .swal2-popup-custom {
+    padding: 10px 5px !important;
+  }
 }
 
-.opacity-10 { opacity: 0.1; }
+.opacity-10 {
+  opacity: 0.1;
+}
+/* Quita espacios innecesarios en el modal de SweetAlert2 */
+.swal2-popup-custom {
+  margin: 0 !important;
+  border-radius: 15px !important;
+}
+
+.swal2-image.img-fluid-custom {
+  width: 100% !important; /* Fuerza a la imagen a ocupar todo el ancho del modal */
+  margin: 10px auto !important;
+  max-width: 100% !important;
+  object-fit: contain;
+}
+
+
+/* Ajuste para que la imagen siempre use el 100% del modal de SweetAlert */
+::ng-deep .custom-project-modal .swal2-image {
+  width: 100% !important;
+  margin: 15px auto !important;
+  max-width: 100% !important;
+}
+
+/* En PC podemos forzar que el modal no sea excesivamente alto */
+@media (min-width: 768px) {
+  ::ng-deep .custom-project-modal {
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}

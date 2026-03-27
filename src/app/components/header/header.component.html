@@ -1,9 +1,11 @@
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-sm">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar shadow-none border-bottom border-dark border-opacity-10">
   <div class="container-fluid px-lg-5">
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="#"> Lucas Cordó </a>
+    <a class="navbar-brand fw-bold d-flex align-items-center letter-spacing-1" href="#"> 
+      LUCAS CORDÓ 
+    </a>
 
     <button #toggler
-      class="navbar-toggler border-0 shadow-none"
+      class="navbar-toggler border-0 shadow-none rounded-0"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNav"
@@ -12,18 +14,18 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto gap-lg-2">
         <li class="nav-item">
-          <a class="nav-link" href="#home" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">Inicio</a>
+          <a class="nav-link nav-square-btn" href="#home" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">INICIO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">Sobre mí</a>
+          <a class="nav-link nav-square-btn" href="#about" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">SOBRE MÍ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#projects" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">Proyectos</a>
+          <a class="nav-link nav-square-btn" href="#projects" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">PROYECTOS</a>
         </li>
-        <li class="nav-item contact-btn ms-lg-4">
-          <a class="nav-link" href="#contact" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">Contacto</a>
+        <li class="nav-item ms-lg-3">
+          <a class="nav-link nav-square-btn contact-highlight" href="#contact" (click)="toggler.getAttribute('aria-expanded') === 'true' ? toggler.click() : null">CONTACTO</a>
         </li>
       </ul>
     </div>
