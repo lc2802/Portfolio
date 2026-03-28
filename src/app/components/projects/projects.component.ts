@@ -10,14 +10,14 @@ import Swal from 'sweetalert2';
   styleUrl: './projects.component.css',
 })
 export class ProjectsComponent {
-verDetalle() {
+  verDetalle() {
     const modalWidth = window.innerWidth < 768 ? '100%' : '40%';
 
     Swal.fire({
-      title: 'Protocolo OAuth2 - Geoportal',
+      text: 'Protocolo OAuth2 - Geoportal',
       imageUrl: 'assets/oauth2.svg',
       imageAlt: 'Diagrama de flujo OAuth2',
-      width: modalWidth, 
+      width: modalWidth,
       background: '#ffffff',
       color: '#020617',
       showCloseButton: true,
@@ -25,7 +25,7 @@ verDetalle() {
       focusConfirm: false,
       customClass: {
         popup: 'custom-project-modal',
-        image: 'img-fluid rounded'
+        image: 'img-fluid rounded',
       },
     });
   }

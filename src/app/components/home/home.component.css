@@ -79,6 +79,10 @@
   #home {
     padding: 1rem;
   }
+
+  .btn{
+    width: calc(100vw - 3rem);
+  }
   
   /* Evitamos que el texto choque con los bordes */
   #home-content {

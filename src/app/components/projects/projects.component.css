@@ -90,21 +90,41 @@
   margin-bottom: 1.5rem;
 }
 
-/* 6. BOTONES Y UTILITARIOS */
 .btn-expand {
   position: absolute;
-  top: 55px;
   right: 20px;
   z-index: 40;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #38bdf8;
-  padding: 6px 14px;
-  border-radius: 4px;
+  /* Fondo sólido para que destaque sobre la imagen/diagrama */
+  background: #0f172a; 
+  color: #ffffff;
+  border: none; /* Borde celeste tech */
+  padding: 8px 16px;
+  border-radius: 2px; 
   font-size: 0.75rem;
-  transition: 0.3s;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-expand i {
+  color: #38bdf8; /* Icono en celeste */
+  font-size: 0.9rem;
 }
 
+.btn-expand:hover {
+  background: #38bdf8;
+  color: #020617;
+  border-color: #38bdf8;
+  
+}
+
+.btn-expand:hover i {
+  color: #020617;
+}
 .tags {
   display: flex;
   flex-wrap: wrap;
